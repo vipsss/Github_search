@@ -45,21 +45,37 @@ class MainViewController: ViewController {
     }
     
     
-    private func showDetails() {
+    private func showDetails(repository: Repository) {
         let vc: DetailsViewController = DetailsViewController.instantiate(storyboard: .details)
+        vc.model = repository
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     private func searchRepository(text: String) {
         self.loadingView.isHidden = false
         self.networkManager.searchRepository(query: text) { [weak self] items, error in
-            self?.loadingView.isHidden = true
-            
-            if let i = items {
-                self?.viewModel?.updateListItems(i)
-                self?.tableView.reloadData()
+            DispatchQueue.main.async {
+                self?.loadingView.isHidden = true
+                
+                guard error == nil else {
+                    self?.showError(message: error!)
+                    return
+                }
+                
+                if let i = items {
+                    self?.viewModel?.updateListItems(i)
+                    self?.tableView.reloadData()
+                }
             }
         }
+    }
+    
+    private func showError(message :String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     @objc func searchTextTimer() {
@@ -82,7 +98,13 @@ extension MainViewController: UITableViewDataSource {
         
             let cell = tableView.dequeueCell(withType: ListItemCell.self, for: indexPath) as! ListItemCell
         cell.cellTitleLabel.text = item?.name ?? ""
-        cell.cellSubtitleLabel.text = item?.name ?? "laa"
+        cell.cellSubtitleLabel.text = item?.description ?? ""
+        if let img = item?.owner.avatar_url {
+            let url = URL(string: img)!
+            cell.cellImage.load(url: url)
+        } else {
+            cell.cellImage = nil
+        }
         
         return cell
     }
@@ -90,7 +112,10 @@ extension MainViewController: UITableViewDataSource {
 
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.showDetails()
+        let item: Repository? = self.viewModel?.listItems[indexPath.row]
+        if let i = item {
+            self.showDetails(repository: i)
+        }
     }
 }
 

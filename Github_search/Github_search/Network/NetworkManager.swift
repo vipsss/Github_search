@@ -25,38 +25,22 @@ class NetworkManager {
 
     func request(fromURL url: URL, httpMethod: HttpMethod = .get, completion: @escaping (Result<Data?, Error>) -> Void) {
 
-        let completionOnMain: (Result<Data?, Error>) -> Void = { result in
-            DispatchQueue.main.async {
-                completion(result)
-            }
-        }
-
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod.method
 
         let urlSession = URLSession.shared.dataTask(with: request) { data, response, error in
 
             if let error = error {
-                completionOnMain(.failure(error))
+                completion(.failure(error))
                 return
             }
 
-            guard let urlResponse = response as? HTTPURLResponse else { return completionOnMain(.failure(ManagerErrors.invalidResponse)) }
+            guard let urlResponse = response as? HTTPURLResponse else { return completion(.failure(ManagerErrors.invalidResponse)) }
             if !(200..<300).contains(urlResponse.statusCode) {
-                return completionOnMain(.failure(ManagerErrors.invalidStatusCode(urlResponse.statusCode)))
+                return completion(.failure(ManagerErrors.invalidStatusCode(urlResponse.statusCode)))
             }
 
-            completionOnMain(.success(data))
-            
-            // Now that all our prerequisites are fullfilled, we can take our data and try to translate it to our generic type of T.
-//            guard let data = data else { return }
-//            do {
-//                let users = try JSONDecoder().decode(T.self, from: data)
-//                completionOnMain(.success(users))
-//            } catch {
-//                debugPrint("Could not translate the data to the requested type. Reason: \(error.localizedDescription)")
-//                completionOnMain(.failure(error))
-//            }
+            completion(.success(data))
         }
 
         // Start the request

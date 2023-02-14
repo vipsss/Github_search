@@ -26,6 +26,7 @@
 		63A632F8299B851E0084BB16 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A632F7299B851E0084BB16 /* Endpoint.swift */; };
 		63A632FA299B854B0084BB16 /* NetworkManager+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A632F9299B854B0084BB16 /* NetworkManager+Search.swift */; };
 		63A632FD299B8AE90084BB16 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A632FC299B8AE90084BB16 /* Repository.swift */; };
+		63A632FF299B96AE0084BB16 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A632FE299B96AE0084BB16 /* UIImageView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		63A632F7299B851E0084BB16 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		63A632F9299B854B0084BB16 /* NetworkManager+Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager+Search.swift"; sourceTree = "<group>"; };
 		63A632FC299B8AE90084BB16 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		63A632FE299B96AE0084BB16 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			children = (
 				63A632E4299B7BA60084BB16 /* UITableView+Extension.swift */,
 				63A632F0299B7FE10084BB16 /* UIStoryboard+Extension.swift */,
+				63A632FE299B96AE0084BB16 /* UIImageView+Extension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63A632FF299B96AE0084BB16 /* UIImageView+Extension.swift in Sources */,
 				63A632E2299B7A1C0084BB16 /* MainViewModel.swift in Sources */,
 				63A632E9299B7C210084BB16 /* ListItemCell.swift in Sources */,
 				63A632CD299B77A80084BB16 /* ViewController.swift in Sources */,

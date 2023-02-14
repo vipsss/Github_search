@@ -11,6 +11,7 @@ class ListItemCell: UITableViewCell {
 
     @IBOutlet weak var cellSubtitleLabel: UILabel!
     @IBOutlet weak var cellTitleLabel: UILabel!
+    @IBOutlet weak var cellImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

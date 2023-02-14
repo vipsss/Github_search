@@ -25,17 +25,23 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="zy1-22-LjN">
+                                <rect key="frame" x="176.66666666666666" y="403.66666666666669" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="zy1-22-LjN" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Cb0-hS-cyM"/>
                             <constraint firstItem="vhY-Zg-8BS" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Jc1-zy-Rwv"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="vhY-Zg-8BS" secondAttribute="bottom" id="b0w-Eu-SyB"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="vhY-Zg-8BS" secondAttribute="trailing" id="bVe-HO-Usc"/>
                             <constraint firstItem="vhY-Zg-8BS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="bum-ZJ-Njy"/>
+                            <constraint firstItem="zy1-22-LjN" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="gBO-di-Uzm"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="zy1-22-LjN" id="Kq2-ni-qGl"/>
                         <outlet property="webView" destination="vhY-Zg-8BS" id="1PF-hX-VC2"/>
                     </connections>
                 </viewController>

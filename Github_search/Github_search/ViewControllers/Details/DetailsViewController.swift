@@ -10,23 +10,30 @@ import WebKit
 
 class DetailsViewController: UIViewController {
 
+    var model: Repository?
+    
     @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.webView.isHidden = true
+        self.webView.navigationDelegate = self
 
-        // Do any additional setup after loading the view.
+        self.activityIndicator.startAnimating()
+        
+        if let m = self.model {
+            let link = URL(string: m.html_url)!
+            let request = URLRequest(url: link)
+            self.webView.load(request)
+        }
     }
-    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension DetailsViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        self.activityIndicator.stopAnimating()
+        self.webView.isHidden = false
     }
-    */
-
 }

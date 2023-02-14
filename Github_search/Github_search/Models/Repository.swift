@@ -14,11 +14,12 @@ struct RepositoryResponce: Codable {
 struct Repository: Codable {
     
     struct Owner: Codable {
-        let html_url: String
+        let avatar_url: String
     }
     
     let id: Int
     let name: String
     let html_url: String
     let owner: Owner
+    let description: String
 }
