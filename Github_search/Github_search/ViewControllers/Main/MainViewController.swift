@@ -121,8 +121,6 @@ extension MainViewController: UITableViewDelegate {
 
 extension MainViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
-        
         if (self.keyPressTimer.isValid) {
             self.keyPressTimer.invalidate()
         }

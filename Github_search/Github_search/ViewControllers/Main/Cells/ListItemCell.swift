@@ -15,7 +15,10 @@ class ListItemCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
+        self.cellImage.layer.cornerRadius = 5
+        self.cellImage.layer.borderWidth = 1
+        self.cellImage.layer.borderColor = UIColor.lightGray.cgColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

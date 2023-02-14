@@ -78,8 +78,8 @@
             filePath = "Github_search/Network/NetworkManager+Search.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "searchRepository(query:completion:)"
             landmarkType = "7">
          </BreakpointContent>

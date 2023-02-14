@@ -22,7 +22,6 @@ extension NetworkManager {
                 if let d = data {
                     do {
 //                        print(String(data: d, encoding: .utf8)!)
-                        
                         let model = try JSONDecoder().decode(RepositoryResponce.self , from: d)
                         completion(model.items, nil)
                     } catch {
@@ -33,7 +32,7 @@ extension NetworkManager {
                     completion(nil, "Somethink went wrong")
                 }
             case .failure(let error):
-                debugPrint("We got a failure trying to get the users. The error we got was: \(error.localizedDescription)")
+                debugPrint("We got a failure trying to get repository list. The error we got was: \(error.localizedDescription)")
                 completion(nil, error.localizedDescription)
             }
         }
