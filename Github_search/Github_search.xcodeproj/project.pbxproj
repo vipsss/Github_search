@@ -22,6 +22,10 @@
 		63A632EF299B7FB50084BB16 /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63A632EE299B7FB50084BB16 /* Details.storyboard */; };
 		63A632F1299B7FE10084BB16 /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A632F0299B7FE10084BB16 /* UIStoryboard+Extension.swift */; };
 		63A632F3299B7FFE0084BB16 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A632F2299B7FFE0084BB16 /* Storyboard.swift */; };
+		63A632F6299B832A0084BB16 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A632F5299B832A0084BB16 /* NetworkManager.swift */; };
+		63A632F8299B851E0084BB16 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A632F7299B851E0084BB16 /* Endpoint.swift */; };
+		63A632FA299B854B0084BB16 /* NetworkManager+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A632F9299B854B0084BB16 /* NetworkManager+Search.swift */; };
+		63A632FD299B8AE90084BB16 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A632FC299B8AE90084BB16 /* Repository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,10 @@
 		63A632EE299B7FB50084BB16 /* Details.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
 		63A632F0299B7FE10084BB16 /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
 		63A632F2299B7FFE0084BB16 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
+		63A632F5299B832A0084BB16 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		63A632F7299B851E0084BB16 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		63A632F9299B854B0084BB16 /* NetworkManager+Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager+Search.swift"; sourceTree = "<group>"; };
+		63A632FC299B8AE90084BB16 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +82,8 @@
 		63A632C7299B77A80084BB16 /* Github_search */ = {
 			isa = PBXGroup;
 			children = (
+				63A632FB299B8AD70084BB16 /* Models */,
+				63A632F4299B83130084BB16 /* Network */,
 				63A632E3299B7B810084BB16 /* Helpers */,
 				63A632DD299B78520084BB16 /* ViewControllers */,
 				63A632DC299B783C0084BB16 /* Base */,
@@ -140,6 +150,24 @@
 				63A632EE299B7FB50084BB16 /* Details.storyboard */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		63A632F4299B83130084BB16 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				63A632F5299B832A0084BB16 /* NetworkManager.swift */,
+				63A632F9299B854B0084BB16 /* NetworkManager+Search.swift */,
+				63A632F7299B851E0084BB16 /* Endpoint.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		63A632FB299B8AD70084BB16 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				63A632FC299B8AE90084BB16 /* Repository.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,11 +247,15 @@
 				63A632E9299B7C210084BB16 /* ListItemCell.swift in Sources */,
 				63A632CD299B77A80084BB16 /* ViewController.swift in Sources */,
 				63A632ED299B7F9E0084BB16 /* DetailsViewController.swift in Sources */,
+				63A632F6299B832A0084BB16 /* NetworkManager.swift in Sources */,
 				63A632C9299B77A80084BB16 /* AppDelegate.swift in Sources */,
 				63A632CB299B77A80084BB16 /* SceneDelegate.swift in Sources */,
+				63A632FD299B8AE90084BB16 /* Repository.swift in Sources */,
 				63A632F3299B7FFE0084BB16 /* Storyboard.swift in Sources */,
 				63A632E0299B788E0084BB16 /* MainViewController.swift in Sources */,
 				63A632E5299B7BA60084BB16 /* UITableView+Extension.swift in Sources */,
+				63A632FA299B854B0084BB16 /* NetworkManager+Search.swift in Sources */,
+				63A632F8299B851E0084BB16 /* Endpoint.swift in Sources */,
 				63A632F1299B7FE10084BB16 /* UIStoryboard+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

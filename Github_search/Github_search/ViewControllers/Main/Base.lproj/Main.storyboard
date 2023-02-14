@@ -38,6 +38,19 @@
                                 <rect key="frame" x="0.0" y="151" width="390" height="659"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <view alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Bq-X7-8yH">
+                                <rect key="frame" x="0.0" y="151" width="390" height="659"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="u3w-7p-8N1">
+                                        <rect key="frame" x="185" y="319.66666666666669" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="u3w-7p-8N1" firstAttribute="centerX" secondItem="1Bq-X7-8yH" secondAttribute="centerX" id="Ozd-Ih-iGK"/>
+                                    <constraint firstItem="u3w-7p-8N1" firstAttribute="centerY" secondItem="1Bq-X7-8yH" secondAttribute="centerY" id="y1F-DW-Jt7"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -46,13 +59,18 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="3io-CK-sww" secondAttribute="bottom" id="5QT-aZ-MhN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3io-CK-sww" secondAttribute="trailing" id="ILp-ge-heG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cQK-jr-yo5" secondAttribute="trailing" id="Mmm-gJ-rgt"/>
+                            <constraint firstItem="1Bq-X7-8yH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="O6o-rf-agq"/>
+                            <constraint firstItem="1Bq-X7-8yH" firstAttribute="top" secondItem="cQK-jr-yo5" secondAttribute="bottom" id="PJe-Jn-heC"/>
                             <constraint firstItem="3io-CK-sww" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="afw-iW-9Xl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1Bq-X7-8yH" secondAttribute="bottom" id="c6k-G0-vvb"/>
                             <constraint firstItem="cQK-jr-yo5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="csU-da-qt7"/>
                             <constraint firstItem="cQK-jr-yo5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ctN-fN-nTn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Bq-X7-8yH" secondAttribute="trailing" id="iSW-Ws-3ih"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mDH-ly-YAy"/>
                     <connections>
+                        <outlet property="loadingView" destination="1Bq-X7-8yH" id="laA-oA-ETB"/>
                         <outlet property="searchBar" destination="UbQ-zB-y6y" id="T8A-Ic-IzK"/>
                         <outlet property="tableView" destination="3io-CK-sww" id="fmH-Jd-Ajq"/>
                     </connections>

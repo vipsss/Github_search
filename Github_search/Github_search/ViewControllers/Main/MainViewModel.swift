@@ -10,6 +10,9 @@ import Foundation
 class MainViewModel {
     
     let title = "Github search app"
+    var listItems: [Repository] = []
     
-    var listItems = ["1", "2", "3"]
+    func updateListItems(_ items: [Repository]) {
+        self.listItems = items
+    }
 }
